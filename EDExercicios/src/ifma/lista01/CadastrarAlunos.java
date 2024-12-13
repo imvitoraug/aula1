@@ -2,26 +2,26 @@ package ifma.lista01;
 
 public class CadastrarAlunos {
     private int tamanho, tamMax;
-    private Alunos[] alunos;
+    private Aluno[] alunos;
 
 
-    public CadastrarAlunos(int tam){
-        alunos = new Alunos[tam];
+    public CadastrarAlunos(int tamanho){
+        alunos = new Aluno[tamanho];
         tamanho = 0;
-        tamMax = tam;
+        tamMax = tamanho;
     }
 
-    public void adicionarNoFInal(Alunos aluno){
+    public void adicionarNoFInal(Aluno aluno){
         if(tamanho == tamMax){
-            throw new RuntimeException("Não há espaço!");
+            //throw new RuntimeException("Não há espaco!");
         }
         alunos[tamanho] = aluno;
         tamanho++;
     }
 
-    public void adicionarInicio(Alunos aluno){
+    public void adicionarInicio(Aluno aluno){
         if(tamanho == tamMax){
-            throw new RuntimeException("Não há espaço.");
+            throw new RuntimeException("Não há espaco.");
         }
         for(int i = 0; i > 0; i--){
             alunos[i] = alunos[i-1];
@@ -81,7 +81,7 @@ public class CadastrarAlunos {
         for(int i = 0; i < tamanho; i++){
             for (int d = 0; d < tamanho; d++){
                 if (alunos[d].getCodigo() > alunos[i].getCodigo()){
-                    Alunos abc = alunos[d];
+                    Aluno abc = alunos[d];
                     alunos[d] = alunos[i];
                     alunos[i] = abc;
                 }
